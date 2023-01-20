@@ -14,21 +14,30 @@ if len(sinchr) != 1:
     
 print("Searching for " + sinchr + " in " + fivchr)
 chrnum = 0
-
+if sinchr != fivchr:
+    print ("No instances of " + sinchr + "found in" + fivchr)
+    
 if sinchr == fivchr[0]:
     print(sinchr + " found at index 0 ")
     chrnum +=1
+    print(chrnum, " instance of " + sinchr + " found in " + fivchr )
+    
 if sinchr == fivchr[1]:
     print(sinchr + " found at index 1 ")
     chrnum +=1
+    print(chrnum, " instances of " + sinchr + " found in" + fivchr )
+    
 if sinchr == fivchr[2]:
     print(sinchr + " found at index 2 ")
     chrnum +=1
+    print(chrnum, " instances of " + sinchr + " found in " + fivchr )
+    
 if sinchr == fivchr[3]:
     print(sinchr + " found at index 3 ")
     chrnum +=1
+    print(chrnum, "instances of " + sinchr + " found in " + fivchr )
+    
 if sinchr == fivchr[4]:
     print(sinchr + " found at index 4 ")
     chrnum +=1
-print(chrnum, "instances of " + sinchr + " found in " + fivchr )
-
+    print(chrnum, "instances of " + sinchr + " found in " + fivchr )
