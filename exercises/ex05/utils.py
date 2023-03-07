@@ -23,9 +23,9 @@ def concat(list_one: list[int], list_two: list[int]) -> list[int]:
 
 
 def sub(a_list: list[str], idx_start: int, idx_end: int) -> list[int]:
-    """generates a list that is a subset of the given list."""
+    """Generates a list that is a subset of the given list."""
     if len(a_list) == 0 or idx_start >= len(a_list) or idx_end <= 0:
-        return[] 
+        return [] 
     result = []
     if idx_start < 0:
         idx_start = 0
@@ -34,6 +34,3 @@ def sub(a_list: list[str], idx_start: int, idx_end: int) -> list[int]:
     for idx in range(idx_start, idx_end):
         result.append(a_list[idx])
     return result
-    
-
-

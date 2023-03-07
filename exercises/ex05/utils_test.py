@@ -5,20 +5,6 @@ __author__ = "730474369"
 from exercises.ex05.utils import only_evens, sub, concat
 
 
-def only_evens(xs: list[int]) -> list[int]:
-    """Return a list of only the even numbers in the input list."""
-    return [x for x in xs if x % 2 == 0]
-
-
-def sub(s: str, start: int, end: int) -> str:
-    """Return a substring of s starting from index start (inclusive) and ending at index end (exclusive)."""
-    return s[start:end]
-
-
-def concat(xs: list[str], separator: str) -> str:
-    """Return a string that is the concatenation of all the strings in the input list separated by the separator."""
-    return separator.join(xs)
-
 
 # test cases
 
