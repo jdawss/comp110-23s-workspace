@@ -1,6 +1,8 @@
-"""Practice with lists and implementing them"""
+"""Practice with lists and implementing them."""
+
 
 __author__ = "730474369"
+
 
 def all(num_list: list[int], num_test: int) -> bool:
     """Goes through the list and returns a bool."""
@@ -15,7 +17,7 @@ def all(num_list: list[int], num_test: int) -> bool:
 
 
 def max(input_list: list[int]) -> int:
-    """Returns max integer of the list"""
+    """Returns max integer of the list."""
     if len(input_list) == 0:
         raise ValueError("max() arg is an empty List")
     idx_max: int = 0
