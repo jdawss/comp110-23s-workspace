@@ -5,9 +5,6 @@ __author__ = "730474369"
 from exercises.ex05.utils import only_evens, sub, concat
 
 
-
-# test cases
-
 def test_only_evens_edge() -> None:
     """Test only_evens with an empty list."""
     assert only_evens([]) == []
