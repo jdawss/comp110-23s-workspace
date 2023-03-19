@@ -12,11 +12,13 @@ points = 0
 player = ""
 
 def greet() -> None:
+    """greeting the player"""
     global player
     print("Welcome to the treasure cove!")
     player = input("What is your name?\n")
 
 def path1() -> None:
+    """Defining the first path"""
     global points
     print(f"{player}, you have chosen Blackbeard's Bounty.")
     print("You find a treasure chest!")
@@ -24,6 +26,7 @@ def path1() -> None:
     print(f"You gained 10 pirate points. You now have {points} pirate points.")
 
 def path2() -> None:
+    """Defining the second path"""
     global points
     print(f"{player}, you have chosen the Smoky Mountain.")
     print("You encounter a dragon!")
@@ -37,6 +40,7 @@ def path2() -> None:
     print(f"You now have {points} pirate points.")
 
 def path3() -> None:
+    """Defining the third path"""
     global points
     print(f"{player}, you have chosen the Lost Souls' Lair.")
     print("You are in a maze!")
@@ -48,8 +52,8 @@ def path3() -> None:
     else:
         print("Invalid choice. Try again.")
 
-# Requirement 1.0 - Define main function
 def main() -> None:
+    """Defining the main function"""
     greet()
     global points
     points = 0
