@@ -1,9 +1,6 @@
 """Adventure game."""
 
-__author__: "730474369"
-
 from typing import List, Dict
-
 
 # Initialize global variable points
 points: int = 0
@@ -19,7 +16,7 @@ def greet() -> None:
     """Greeting the player."""
     global player
     print("Welcome to the treasure cove!")
-    player: str = input("What is your name?\n")
+    player = input("What is your name?\n")
 
 
 def path1() -> None:
@@ -62,9 +59,9 @@ def path3() -> None:
 
 def main() -> None:
     """Defining main function."""
-    global points, player
+    global points
     greet()
-    points: int = 0
+    points = 0
 
     paths: List[callable[[], None]] = [path1, path2, path3]
 
