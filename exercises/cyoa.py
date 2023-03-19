@@ -2,7 +2,7 @@
 
 __author__ = "730474369"
 
-import sys
+from typing import List, Dict
 
 # Initialize global variable points
 points: int = 0
@@ -11,7 +11,7 @@ points: int = 0
 player: str = ""
 
 # Define emoji constant
-TREASURE_EMOJI = "\U0001F4B0"
+TREASURE_EMOJI: str = "\U0001F4B0"
 
 
 def greet() -> None:
@@ -51,7 +51,7 @@ def path3() -> None:
     print(f"{player}, you have chosen the Lost Souls' Lair.")
     print("You are in a maze!")
     direction: str = input("Do you want to go left or right?\n")
-    choices: dict[str, int] = {"left": 7, "right": -5}
+    choices: Dict[str, int] = {"left": 7, "right": -5}
     if direction in choices:
         points += choices[direction]
         print(f"You now have {points} pirate points.")
@@ -64,7 +64,7 @@ def main() -> None:
     greet()
     points = 0
 
-    paths: list[callable[[], None]] = [path1, path2, path3]
+    paths: List[callable[[], None]] = [path1, path2, path3]
 
     while True:
         print("Choose your path:")
@@ -75,16 +75,17 @@ def main() -> None:
         choice: str = input()
 
         choice = int(choice) if choice.isdigit() else None
-        valid_choices: list[int] = [1, 2, 3, 5]
+        valid_choices: List[int] = [1, 2, 3, 5]
         if choice in valid_choices:
             if choice == 5:
                 print(f"Goodbye, {player}! You earned {points} pirate points.")
-                sys.exit(0)
+                return None
             else:
                 paths[choice - 1]()
                 print(f"You now have {points} pirate points.")
         else:
             print("Invalid choice. Try again.")
+
 
 if __name__ == "__main__":
     main()
