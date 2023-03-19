@@ -1,8 +1,9 @@
 """Adventure game."""
 
-__author__: "730474369"
-
 from typing import List, Dict
+
+
+__author__ = "730474369"
 
 # Initialize global variable points
 points: int = 0
