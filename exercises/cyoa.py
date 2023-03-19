@@ -5,10 +5,10 @@ __author__ = "730474369"
 import sys
 
 # Initialize global variable points
-points = 0
+points: int = 0
 
 # Initialize global variable player
-player = ""
+player: str = ""
 
 
 def greet() -> None:
@@ -32,7 +32,7 @@ def path2() -> None:
     global points
     print(f"{player}, you have chosen the Smoky Mountain.")
     print("You encounter a dragon!")
-    choice = input("What do you do? Run or fight?\n")
+    choice: str = input("What do you do? Run or fight?\n")
     if choice == "fight":
         print("You defeated the dragon and gained 5 pirate points!")
         points += 5
@@ -47,8 +47,8 @@ def path3() -> None:
     global points
     print(f"{player}, you have chosen the Lost Souls' Lair.")
     print("You are in a maze!")
-    direction = input("Do you want to go left or right?\n")
-    choices = {"left": 7, "right": -5}
+    direction: str = input("Do you want to go left or right?\n")
+    choices: dict[str, int] = {"left": 7, "right": -5}
     if direction in choices:
         points += choices[direction]
         print(f"You now have {points} pirate points.")
@@ -62,7 +62,7 @@ def main() -> None:
     global points
     points = 0
 
-    paths = [path1, path2, path3, ]
+    paths: list[callable[[], None]] = [path1, path2, path3]
 
     while True:
         print("Choose your path:")
@@ -70,16 +70,16 @@ def main() -> None:
         print("2. Path 2")
         print("3. Path 3")
         print("5. End the adventure")
-        choice = input()
+        choice: str = input()
 
         choice = int(choice) if choice.isdigit() else None
-        valid_choices = [1, 2, 3, 5]
+        valid_choices: list[int] = [1, 2, 3, 5]
         if choice in valid_choices:
             if choice == 5:
                 print(f"Goodbye, {player} ! You earned {points} pirate points.")
                 sys.exit(0)
             else:
-                paths[choice-1]()
+                paths[choice - 1]()
                 print(f"You now have {points} pirate points.")
         else:
             print("Invalid choice. Try again.")
