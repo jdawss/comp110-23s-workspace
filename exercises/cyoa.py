@@ -1,6 +1,7 @@
 """Adventure game."""
 
-from typing import List, Dict
+from typing import List, Dict, Union, Callable
+
 
 # Initialize global variable points
 points: int = 0
@@ -59,11 +60,11 @@ def path3() -> None:
 
 def main() -> None:
     """Defining main function."""
-    global points
+    global points, player
     greet()
     points = 0
 
-    paths: List[callable[[], None]] = [path1, path2, path3]
+    paths: List[Callable[[], None]] = [path1, path2, path3]
 
     while True:
         print("Choose your path:")
@@ -71,7 +72,7 @@ def main() -> None:
         print("2. Path 2")
         print("3. Path 3")
         print("5. End the adventure")
-        choice: str = input()
+        choice: Union[str, int] = input()
 
         choice = int(choice) if choice.isdigit() else None
         valid_choices: List[int] = [1, 2, 3, 5]
