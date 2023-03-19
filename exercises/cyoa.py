@@ -2,7 +2,6 @@
 
 __author__ = "730474369"
 
-import random
 import sys
 
 # Initialize global variable points
@@ -11,22 +10,25 @@ points = 0
 # Initialize global variable player
 player = ""
 
+
 def greet() -> None:
-    """greeting the player"""
+    """Greeting the player."""
     global player
     print("Welcome to the treasure cove!")
     player = input("What is your name?\n")
 
+
 def path1() -> None:
-    """Defining the first path"""
+    """Defining the first path."""
     global points
     print(f"{player}, you have chosen Blackbeard's Bounty.")
     print("You find a treasure chest!")
     points += 10
     print(f"You gained 10 pirate points. You now have {points} pirate points.")
 
+
 def path2() -> None:
-    """Defining the second path"""
+    """Defining the second path."""
     global points
     print(f"{player}, you have chosen the Smoky Mountain.")
     print("You encounter a dragon!")
@@ -39,8 +41,9 @@ def path2() -> None:
         points -= 3
     print(f"You now have {points} pirate points.")
 
+
 def path3() -> None:
-    """Defining the third path"""
+    """Defining the third path."""
     global points
     print(f"{player}, you have chosen the Lost Souls' Lair.")
     print("You are in a maze!")
@@ -52,8 +55,9 @@ def path3() -> None:
     else:
         print("Invalid choice. Try again.")
 
+
 def main() -> None:
-    """Defining the main function"""
+    """Defining the main function."""
     greet()
     global points
     points = 0
@@ -72,13 +76,14 @@ def main() -> None:
         valid_choices = [1, 2, 3, 5]
         if choice in valid_choices:
             if choice == 5:
-                print(f"Goodbye, {player}! You earned {points} pirate points.")
+                print(f"Goodbye, {player} ! You earned {points} pirate points.")
                 sys.exit(0)
             else:
                 paths[choice-1]()
                 print(f"You now have {points} pirate points.")
         else:
             print("Invalid choice. Try again.")
+
 
 if __name__ == "__main__":
     main()
