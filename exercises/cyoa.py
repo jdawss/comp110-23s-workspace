@@ -12,12 +12,11 @@ player: str = ""
 TREASURE_EMOJI: str = "\U0001F4B0"
 
 
-def greet(name: str) -> None:
+def greet() -> None:
     """Greeting the player."""
     global player
     print("Welcome to the treasure cove!")
-    player = name
-    print(f"Hello, {player} !")
+    player = input("What is your name?\n")
 
 
 def path1() -> None:
