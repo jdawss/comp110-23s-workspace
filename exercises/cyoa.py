@@ -1,7 +1,5 @@
 """Adventure game."""
 
-__author__ = "730474369"
-
 from typing import List, Dict
 
 # Initialize global variable points
@@ -23,7 +21,7 @@ def greet() -> None:
 
 def path1() -> None:
     """Defining the first path."""
-    global points
+    global points, player
     print(f"{player}, you have chosen Blackbeard's Bounty.")
     print(f"You find a treasure chest! {TREASURE_EMOJI}")
     points += 10
@@ -32,7 +30,7 @@ def path1() -> None:
 
 def path2() -> None:
     """Defining the second path."""
-    global points
+    global points, player
     print(f"{player}, you have chosen the Smoky Mountain.")
     print("You encounter a dragon!")
     choice: str = input("What do you do? Run or fight?\n")
@@ -47,7 +45,7 @@ def path2() -> None:
 
 def path3() -> None:
     """Defining the third path."""
-    global points
+    global points, player
     print(f"{player}, you have chosen the Lost Souls' Lair.")
     print("You are in a maze!")
     direction: str = input("Do you want to go left or right?\n")
@@ -60,6 +58,7 @@ def path3() -> None:
 
 
 def main() -> None:
+    """Defining main function."""
     global points
     greet()
     points = 0
