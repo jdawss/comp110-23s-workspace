@@ -2,7 +2,7 @@
 
 from typing import List, Dict
 
-__author__: str = "730474369"
+__author__: "730474369"
 
 # Initialize global variable points
 points: int = 0
@@ -26,7 +26,7 @@ def path1() -> None:
     global points, player
     print(f"{player}, you have chosen Blackbeard's Bounty.")
     print(f"You find a treasure chest! {TREASURE_EMOJI}")
-    points: int += 10
+    points += 10
     print(f"You gained 10 pirate points. You now have {points} pirate points.")
 
 
@@ -38,10 +38,10 @@ def path2() -> None:
     choice: str = input("What do you do? Run or fight?\n")
     if choice == "fight":
         print("You defeated the dragon and gained 5 pirate points!")
-        points: int += 5
+        points += 5
     else:
         print("You ran away from the dragon and lost 3 pirate points!")
-        points: int -= 3
+        points -= 3
     print(f"You now have {points} pirate points.")
 
 
@@ -53,7 +53,7 @@ def path3() -> None:
     direction: str = input("Do you want to go left or right?\n")
     choices: Dict[str, int] = {"left": 7, "right": -5}
     if direction in choices:
-        points: int += choices[direction]
+        points += choices[direction]
         print(f"You now have {points} pirate points.")
     else:
         print("Invalid choice. Try again.")
