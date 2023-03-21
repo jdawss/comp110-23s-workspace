@@ -1,9 +1,8 @@
-"""Adventure game."""
+"""Creating your own adventure game."""
 
 from typing import List, Dict
 
-
-__author__ = "730474369"
+__author__: str = "730474369"
 
 # Initialize global variable points
 points: int = 0
@@ -19,7 +18,7 @@ def greet() -> None:
     """Greeting the player."""
     global player
     print("Welcome to the treasure cove!")
-    player = input("What is your name?\n")
+    player: str = input("What is your name?\n")
 
 
 def path1() -> None:
@@ -27,7 +26,7 @@ def path1() -> None:
     global points, player
     print(f"{player}, you have chosen Blackbeard's Bounty.")
     print(f"You find a treasure chest! {TREASURE_EMOJI}")
-    points += 10
+    points: int += 10
     print(f"You gained 10 pirate points. You now have {points} pirate points.")
 
 
@@ -39,10 +38,10 @@ def path2() -> None:
     choice: str = input("What do you do? Run or fight?\n")
     if choice == "fight":
         print("You defeated the dragon and gained 5 pirate points!")
-        points += 5
+        points: int += 5
     else:
         print("You ran away from the dragon and lost 3 pirate points!")
-        points -= 3
+        points: int -= 3
     print(f"You now have {points} pirate points.")
 
 
@@ -54,7 +53,7 @@ def path3() -> None:
     direction: str = input("Do you want to go left or right?\n")
     choices: Dict[str, int] = {"left": 7, "right": -5}
     if direction in choices:
-        points += choices[direction]
+        points: int += choices[direction]
         print(f"You now have {points} pirate points.")
     else:
         print("Invalid choice. Try again.")
@@ -64,7 +63,7 @@ def main() -> None:
     """Defining main function."""
     global points
     greet()
-    points = 0
+    points: int = 0
 
     paths: List[callable[[], None]] = [path1, path2, path3]
 
