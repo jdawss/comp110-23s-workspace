@@ -63,7 +63,7 @@ def main() -> None:
     """Defining main function."""
     global points
     greet()
-    points: int = 0
+    points = 0
 
     paths: List[callable[[], None]] = [path1, path2, path3]
 
