@@ -18,7 +18,7 @@ def greet() -> None:
     """Greeting the player."""
     global player
     print("Welcome to the treasure cove!")
-    player: str = input("What is your name?\n")
+    player = input("What is your name?\n")
 
 
 def path1() -> None:
