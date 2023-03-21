@@ -1,6 +1,7 @@
 """Creating your own adventure game."""
 
 from typing import List, Dict
+import random
 
 __author__: "730474369"
 
@@ -13,7 +14,7 @@ player: str = ""
 # Define emoji constant
 TREASURE_EMOJI: str = "\U0001F4B0"
 
-
+# Greet the player and ask for their name
 def greet() -> None:
     """Greeting the player."""
     global player
@@ -34,14 +35,21 @@ def path2() -> None:
     """Defining the second path."""
     global points, player
     print(f"{player}, you have chosen the Smoky Mountain.")
-    print("You encounter a dragon!")
-    choice: str = input("What do you do? Run or fight?\n")
-    if choice == "fight":
-        print("You defeated the dragon and gained 5 pirate points!")
-        points += 5
+    
+    # Randomly determine if the player encounters a dragon or not
+    if random.random() < 0.5:
+        print("You encounter a dragon!")
+        choice: str = input("What do you do? Run or fight?\n")
+        if choice == "fight":
+            print("You defeated the dragon and gained 5 pirate points!")
+            points += 5
+        else:
+            print("You ran away from the dragon and lost 3 pirate points!")
+            points -= 3
     else:
-        print("You ran away from the dragon and lost 3 pirate points!")
-        points -= 3
+        print("You explore the mountain and find a hidden cave with treasure!")
+        points += 10
+    
     print(f"You now have {points} pirate points.")
 
 
