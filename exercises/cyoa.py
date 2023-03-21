@@ -75,7 +75,7 @@ def main() -> None:
     greet()
     points = 0
 
-    paths: List[callable[[], None]] = [path1, path2, path3]
+    paths: List[None] = [path1, path2, path3]
 
     while True:
         print("Choose your path:")
@@ -92,7 +92,8 @@ def main() -> None:
                 print(f"Goodbye, {player}! You earned {points} pirate points.")
                 return None
             else:
-                paths[choice - 1]()
+                selected_path = paths[choice - 1]
+                selected_path()
                 print(f"You now have {points} pirate points.")
         else:
             print("Invalid choice. Try again.")
