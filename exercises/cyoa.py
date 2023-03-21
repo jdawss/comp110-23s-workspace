@@ -16,6 +16,7 @@ TREASURE_EMOJI: str = "\U0001F4B0"
 
 # Greet the player and ask for their name
 
+
 def greet() -> None:
     """Greeting the player."""
     global player
