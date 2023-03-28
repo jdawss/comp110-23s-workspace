@@ -3,9 +3,9 @@
 __author__ = "730474369"
 
 
-def invert(dict_1: dict[str, str]) -> dict[str,str]:
-    """Function that inverts the keys and the values"""
-    new_dict_1: dict[str,str] = {}
+def invert(dict_1: dict[str, str]) -> dict[str, str]:
+    """Function that inverts the keys and the values."""
+    new_dict_1: dict[str, str] = {}
     for elem in dict_1:
         new_dict_1[dict_1[elem]] = elem
     if len(new_dict_1) < len(dict_1):
@@ -13,7 +13,7 @@ def invert(dict_1: dict[str, str]) -> dict[str,str]:
     return new_dict_1
 
 
-def favorite_color(dict_2: dict[str,str]) -> str:
+def favorite_color(dict_2: dict[str, str]) -> str:
     """Return color that appears most frequently."""
     highest: int = 0
     counter: dict[str, int] = {}
